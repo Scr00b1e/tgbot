@@ -3,11 +3,10 @@ from aiogram.types import (ReplyKeyboardMarkup, KeyboardButton,
 
 from aiogram.utils.keyboard import ReplyKeyboardBuilder, InlineKeyboardBuilder
 
-main = ReplyKeyboardMarkup(keyboard=[
-    [KeyboardButton(text='Catalog')],
-    [KeyboardButton(text='Trash'), KeyboardButton(text='Contacts')]
-],  resize_keyboard=True,
-    input_field_placeholder='Choose menu options')
+main = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text='Catalog', callback_data='catalog')],
+    [InlineKeyboardButton(text='Trash', callback_data='trash'), InlineKeyboardButton(text='Contacts', callback_data='contacts')]
+])
 
 settings = InlineKeyboardMarkup(inline_keyboard=[[
     InlineKeyboardButton(text='Youtube', url='https://youtube.com')]])
